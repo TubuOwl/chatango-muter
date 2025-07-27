@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Chatango User Hider",
+  "version": "1.0",
+  "description": "Sembunyikan pesan dari user tertentu di seluruh situs Chatango.",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["*://*.chatango.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.chatango.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
