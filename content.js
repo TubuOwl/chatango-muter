@@ -1,4 +1,4 @@
-const blockedUsers = ["Betrayer", "Zam"];
+const blockedUsers = ["Betrayer", "Zam", "Tidakterdaftar", "tidakterdaftar"];
 
 function hideUserMessages() {
   document.querySelectorAll(".msg").forEach(msg => {
