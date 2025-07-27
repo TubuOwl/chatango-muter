@@ -16,8 +16,11 @@ function observeAndHide(users) {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
-chrome.storage.local.get(["hiddenUsers"], (data) => {
-  const users = data.hiddenUsers || [];
-  hideUsers(users);
-  observeAndHide(users);
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "refreshHide") {
+    chrome.storage.local.get(["hiddenUsers"], (data) => {
+      const users = data.hiddenUsers || [];
+      hideUsers(users); // panggil ulang
+    });
+  }
 });
