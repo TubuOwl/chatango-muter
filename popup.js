@@ -27,10 +27,15 @@ hideBtn.onclick = () => {
     const users = data.hiddenUsers || [];
     if (!users.includes(user)) {
       users.push(user);
-      chrome.storage.local.set({ hiddenUsers: users }, updateUserList);
+      chrome.storage.local.set({ hiddenUsers: users }, () => {
+        updateUserList();
+
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          chrome.tabs.sendMessage(tabs[0].id, { action: "refreshHide" });
+        });
+      });
     }
     usernameInput.value = "";
   });
 };
 
-updateUserList();
