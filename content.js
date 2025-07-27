@@ -1,4 +1,4 @@
-const blockedUsers = ["Betrayer", "Zam", "Tidakterdaftar", "tidakterdaftar"];
+const blockedUsers = ["loly"]; //throw a pie in his face if you meet him 
 
 function hideUserMessages() {
   document.querySelectorAll(".msg").forEach(msg => {
@@ -14,5 +14,5 @@ function hideUserMessages() {
 
 hideUserMessages();
 
-const observer = new MutationObserver(hideUserMessages);
+const observer = new MutationObserver(hideUserMessages); //always listen to DOM
 observer.observe(document.body, { childList: true, subtree: true });
