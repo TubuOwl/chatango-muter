@@ -1,13 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Chatango User Hider",
+  "name": "Auto Chatango User Hider",
   "version": "1.0",
-  "description": "Sembunyikan pesan dari user tertentu di seluruh situs Chatango.",
-  "permissions": ["storage", "scripting"],
+  "description": "Sembunyikan otomatis pesan dari user tertentu di Chatango.",
+  "permissions": [],
   "host_permissions": ["*://*.chatango.com/*"],
-  "action": {
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": ["*://*.chatango.com/*"],
