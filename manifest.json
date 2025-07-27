@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Auto Chatango User Hider",
+  "name": "Chatango-Muter",
   "version": "1.0",
-  "description": "Sembunyikan otomatis pesan dari user tertentu di Chatango.",
+  "description": "Sembunyikan otomatis pesan dari user tertentu di Chatango. - Automatically hide messages from specific users on Chatango.",
   "permissions": [],
   "host_permissions": ["*://*.chatango.com/*"],
   "content_scripts": [
